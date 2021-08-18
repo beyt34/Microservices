@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using UdemyMicroservices.Services.Catalog.Dtos;
+using UdemyMicroservices.Services.Catalog.Services;
 
 namespace UdemyMicroservices.Services.Catalog
 {
@@ -13,7 +11,25 @@ namespace UdemyMicroservices.Services.Catalog
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+
+                var categoryService = serviceProvider.GetRequiredService<ICategoryService>();
+
+                if (!categoryService.GetAllAsync().Result.Data.Any())
+                {
+                    categoryService.CreateOrUpdateAsync(new CategoryDto { Name = "API" }).Wait();
+                    categoryService.CreateOrUpdateAsync(new CategoryDto { Name = "Web" }).Wait();
+                    categoryService.CreateOrUpdateAsync(new CategoryDto { Name = "Db" }).Wait();
+                    categoryService.CreateOrUpdateAsync(new CategoryDto { Name = "Cache" }).Wait();
+                    categoryService.CreateOrUpdateAsync(new CategoryDto { Name = "Docker" }).Wait();
+                }
+            }
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
