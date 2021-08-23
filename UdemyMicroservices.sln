@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{A94E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyMicroservices.Services.Catalog", "Services\Catalog\UdemyMicroservices.Services.Catalog.csproj", "{BFF2B927-6A57-43CC-9E49-6308EC0EF6A7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{606F7FBA-A385-402D-8E3C-2E9EF78B1B53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyMicroservices.Identity", "Identity\UdemyMicroservices.Identity.csproj", "{BAEFBC00-511B-431E-A235-56898F17434D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +36,10 @@ Global
 		{BFF2B927-6A57-43CC-9E49-6308EC0EF6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFF2B927-6A57-43CC-9E49-6308EC0EF6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFF2B927-6A57-43CC-9E49-6308EC0EF6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAEFBC00-511B-431E-A235-56898F17434D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAEFBC00-511B-431E-A235-56898F17434D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAEFBC00-511B-431E-A235-56898F17434D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAEFBC00-511B-431E-A235-56898F17434D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +48,7 @@ Global
 		{F36A300A-CE43-4B8D-9F99-4D51A11E9C28} = {1CA58615-625D-4642-BF6C-C838AAAC3E59}
 		{A94ECE19-B924-4553-B353-D815B845FD73} = {C332364D-BE86-4337-B69D-B8A23A0DDB9D}
 		{BFF2B927-6A57-43CC-9E49-6308EC0EF6A7} = {A94ECE19-B924-4553-B353-D815B845FD73}
+		{BAEFBC00-511B-431E-A235-56898F17434D} = {606F7FBA-A385-402D-8E3C-2E9EF78B1B53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABFD0095-8641-4507-B22B-2554254F5D66}
