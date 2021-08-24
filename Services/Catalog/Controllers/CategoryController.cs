@@ -7,7 +7,7 @@ using UdemyMicroservices.Shared.ControllerBases;
 namespace UdemyMicroservices.Services.Catalog.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class CategoryController : CustomBaseController
     {
         private readonly ICategoryService _categoryService;
@@ -18,7 +18,6 @@ namespace UdemyMicroservices.Services.Catalog.Controllers
         }
 
         [HttpGet]
-        [Route("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var response = await _categoryService.GetAllAsync();
@@ -26,7 +25,6 @@ namespace UdemyMicroservices.Services.Catalog.Controllers
         }
 
         [HttpGet]
-        [Route("GetById")]
         public async Task<IActionResult> GetById(string id)
         {
             var response = await _categoryService.GetByIdAsync(id);
@@ -34,7 +32,6 @@ namespace UdemyMicroservices.Services.Catalog.Controllers
         }
 
         [HttpPost]
-        [Route("CreateOrUpdate")]
         public async Task<IActionResult> CreateOrUpdate(CategoryDto categoryDto)
         {
             var response = await _categoryService.CreateOrUpdateAsync(categoryDto);
@@ -42,7 +39,6 @@ namespace UdemyMicroservices.Services.Catalog.Controllers
         }
 
         [HttpDelete]
-        [Route("Delete")]
         public async Task<IActionResult> Delete(string id)
         {
             var response = await _categoryService.DeleteAsync(id);
