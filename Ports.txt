@@ -1,3 +1,4 @@
 Services
-	CatalogAPI => 5011
+	CatalogAPI		=> 5011
+	PhotoStockAPI	=> 5012
 Identity => 5001
