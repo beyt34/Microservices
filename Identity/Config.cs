@@ -17,7 +17,7 @@ namespace UdemyMicroservices.Identity
             {
                 Scopes = { "catalog_fullpermission" }
             },
-            new ApiResource("photo_stock_catalog")
+            new ApiResource("resource_photo_stock")
             {
                 Scopes = { "photo_stock_fullpermission" }
             },
